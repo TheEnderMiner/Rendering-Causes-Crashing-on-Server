@@ -1,0 +1,130 @@
+
+// Ooh. Shiny.
+
+Time: 6/17/19 8:37 PM
+Description: Exception in server tick loop
+
+net.minecraftforge.fml.common.LoaderExceptionModCrash: Caught exception from Vanilla Evolution (evep)
+Caused by: java.lang.NoClassDefFoundError: com/evep/evepmod/util/handlers/RenderHandler
+	at com.evep.evepmod.util.handlers.RegistryHandler.preInitRegistries(RegistryHandler.java:77)
+	at com.evep.evepmod.VanillaEvolutionMod.preInit(VanillaEvolutionMod.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:624)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.sendEventToModContainer(LoadController.java:219)
+	at net.minecraftforge.fml.common.LoadController.propogateStateMessage(LoadController.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.distributeStateMessage(LoadController.java:136)
+	at net.minecraftforge.fml.common.Loader.preinitializeMods(Loader.java:627)
+	at net.minecraftforge.fml.server.FMLServerHandler.beginServerLoading(FMLServerHandler.java:99)
+	at net.minecraftforge.fml.common.FMLCommonHandler.onServerStart(FMLCommonHandler.java:333)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(DedicatedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: com.evep.evepmod.util.handlers.RenderHandler
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 37 more
+Caused by: net.minecraftforge.fml.common.asm.ASMTransformerWrapper$TransformerException: Exception in class transformer net.minecraftforge.fml.common.asm.transformers.SideTransformer@baf1bb3 from coremod FMLCorePlugin
+	at net.minecraftforge.fml.common.asm.ASMTransformerWrapper$TransformerWrapper.transform(ASMTransformerWrapper.java:260)
+	at net.minecraft.launchwrapper.LaunchClassLoader.runTransformers(LaunchClassLoader.java:279)
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:176)
+	... 39 more
+Caused by: java.lang.RuntimeException: Attempted to load class com/evep/evepmod/util/handlers/RenderHandler for invalid side SERVER
+	at net.minecraftforge.fml.common.asm.transformers.SideTransformer.transform(SideTransformer.java:62)
+	at net.minecraftforge.fml.common.asm.ASMTransformerWrapper$TransformerWrapper.transform(ASMTransformerWrapper.java:256)
+	... 41 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 4.15.0-36-generic
+	Java Version: 1.8.0_181, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 742804160 bytes (708 MB) / 1056309248 bytes (1007 MB) up to 1056309248 bytes (1007 MB)
+	JVM Flags: 7 total; -Xms1024M -Xmx1024M -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSIncrementalPacing -XX:ParallelGCThreads=2 -XX:+AggressiveOpts
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2824 25 mods loaded, 25 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID                                | Version           | Source                                   | Signature                                |
+	|:----- |:--------------------------------- |:----------------- |:---------------------------------------- |:---------------------------------------- |
+	| LCH   | minecraft                         | 1.12.2            | minecraft.jar                            | None                                     |
+	| LCH   | mcp                               | 9.42              | minecraft.jar                            | None                                     |
+	| LCH   | FML                               | 8.0.99.99         | forge.jar                                | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCH   | forge                             | 14.23.5.2824      | forge.jar                                | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCH   | customnpcs                        | 1.12              | CustomNPCs_1.12.2(13may18).jar           | None                                     |
+	| LCH   | endercore                         | 1.12.2-0.5.31     | EnderCore-1.12.2-0.5.31.jar              | None                                     |
+	| LCH   | enderio                           | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | enderiointegrationtic             | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | enderiobase                       | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | enderioconduits                   | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | enderioconduitsappliedenergistics | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | enderioconduitsopencomputers      | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | enderioconduitsrefinedstorage     | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | enderiointegrationforestry        | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | mantle                            | 1.12-1.3.2.24     | Mantle-1.12-1.3.2.24.jar                 | None                                     |
+	| LCH   | tconstruct                        | 1.12.2-2.10.1.87  | TConstruct-1.12.2-2.10.1.87.jar          | None                                     |
+	| LCH   | enderiointegrationticlate         | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | enderiomachines                   | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCH   | enderiopowertools                 | 5.0.26            | EnderIO-1.12.2-5.0.26.jar                | None                                     |
+	| LCE   | evep                              | 1.0               | evep-1.0.jar                             | None                                     |
+	| LC    | cfm                               | 6.2.0             | furniture-6.2.0-1.12.2.jar               | None                                     |
+	| LC    | mekanism                          | 1.12.2-9.4.13.349 | Mekanism-1.12.2-9.4.13.349.jar           | None                                     |
+	| LC    | mekanismgenerators                | 9.4.11            | MekanismGenerators-1.12.2-9.4.13.349.jar | None                                     |
+	| LC    | mekanismtools                     | 9.4.11            | MekanismTools-1.12.2-9.4.13.349.jar      | None                                     |
+	| LC    | petbat                            | 1.4.8             | PetBat-1.12.2.jar                        | None                                     |
+
+	Loaded coremods (and transformers): 
+CCLCorePlugin (CodeChickenLib-1.8-1.1.2.115-universal.jar)
+  codechicken.lib.asm.ClassHeirachyManager
+  codechicken.lib.asm.RenderHookTransformer
+EnderCorePlugin (EnderCore-1.12.2-0.5.31.jar)
+  com.enderio.core.common.transform.EnderCoreTransformer
+  com.enderio.core.common.transform.SimpleMixinPatcher
+	Pulsar/tconstruct loaded Pulses: 
+		- TinkerCommons (Enabled/Forced)
+		- TinkerWorld (Enabled/Not Forced)
+		- TinkerTools (Enabled/Not Forced)
+		- TinkerHarvestTools (Enabled/Forced)
+		- TinkerMeleeWeapons (Enabled/Forced)
+		- TinkerRangedWeapons (Enabled/Forced)
+		- TinkerModifiers (Enabled/Forced)
+		- TinkerSmeltery (Enabled/Not Forced)
+		- TinkerGadgets (Enabled/Not Forced)
+		- TinkerOredict (Enabled/Forced)
+		- TinkerIntegration (Enabled/Forced)
+		- TinkerFluids (Enabled/Forced)
+		- TinkerMaterials (Enabled/Forced)
+		- TinkerModelRegister (Enabled/Forced)
+
+	Profiler Position: N/A (disabled)
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)
