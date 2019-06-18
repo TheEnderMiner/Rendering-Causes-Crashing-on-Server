@@ -18,6 +18,7 @@ public class RenderHandler {
 		@Override
 		public Render<? super EntityFrostZombie> createRenderFor(RenderManager manager){
 			return new RenderFrostZombie(manager);
+				//new RenderFrostZombie(manager); errored with "The constructor RenderFrostZombie(RenderManager) is undefined"
 		}
 		});
 	}
